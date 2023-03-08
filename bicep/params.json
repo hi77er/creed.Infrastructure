@@ -3,7 +3,7 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
     "solution": {
-      "value": "srvymkr"
+      "value": "creed"
     },
     "apiProject": {
       "value": "server"

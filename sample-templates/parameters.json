@@ -2,19 +2,19 @@
     "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
-        "containerapps_ca_srvymkr_mongo_dev_name": {
+        "containerapps_ca_creed_mongo_dev_name": {
             "value": null
         },
-        "containerapps_ca_srvymkr_server_dev_name": {
+        "containerapps_ca_creed_server_dev_name": {
             "value": null
         },
-        "managedEnvironments_cae_srvymkr_dev_name": {
+        "managedEnvironments_cae_creed_dev_name": {
             "value": null
         },
-        "containerapps_ca_srvymkr_server_prod_name": {
+        "containerapps_ca_creed_server_prod_name": {
             "value": null
         },
-        "managedEnvironments_cae_srvymkr_prod_name": {
+        "managedEnvironments_cae_creed_prod_name": {
             "value": null
         },
         "registries_CRTestingGeneral_name": {

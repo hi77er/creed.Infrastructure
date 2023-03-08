@@ -1,11 +1,11 @@
 # Service Principal necessary to authenticate Github Actions infront of Azure
-# az ad sp create-for-rbac --name srvymkr-github-contributor-sp --role contributor --scope /subscriptions/$SUBSCRIPTION_ID --sdk-auth
+# az ad sp create-for-rbac --name creed-github-contributor-sp --role contributor --scope /subscriptions/$SUBSCRIPTION_ID --sdk-auth
 
 ##  Before creating a new Resource Group and populating it with the recources described 
 ##  in the Bicep Files, make sure the Resource Group doesn't exist:
 ##  ! NOT IMPLEMENTED IN GITHUB ACTIONS FOR THIS PROJECT
 
-az group delete --name srvymkr-training-rg 
+az group delete --name creed-training-rg 
 
 
 
@@ -13,7 +13,7 @@ az group delete --name srvymkr-training-rg
 ##  decribed in the Bicep Files, doesn't exist in the Deleted Key Vaults list.
 ##  ! NOT IMPLEMENTED IN GITHUB ACTIONS THIS PROJECT
 
-az keyvault purge --name srvymkr-key-vault
+az keyvault purge --name creed-key-vault
 
 
 
@@ -21,14 +21,14 @@ az keyvault purge --name srvymkr-key-vault
 ##  it doesn't exist. Create it instead:
 ##  ! IMPLEMENTED IN GITHUB ACTIONS FOR THIS PROJECT
 
-## az group create --name srvymkr-training-rg --location westeurope
+## az group create --name creed-training-rg --location westeurope
 
 
 
 ##  Test (WHAT-IF) Resource-Group Scoped Deployment of Core Infrastructure
 ##  ! IMPLEMENTED IN GITHUB ACTIONS FOR THIS PROJECT
 
-## az deployment group what-if --resource-group srvymkr-training-rg --template-file .\infrastructure\bicep\main.bicep --parameters .\infrastructure\bicep\params.json
+## az deployment group what-if --resource-group creed-training-rg --template-file .\infrastructure\bicep\main.bicep --parameters .\infrastructure\bicep\params.json
 
 
 
@@ -36,4 +36,4 @@ az keyvault purge --name srvymkr-key-vault
 ##  Note: Default MS Container App (tagged latest) image will be used for the new Container Apps.
 ##  ! IMPLEMENTED IN GITHUB ACTIONS FOR THIS PROJECT
 
-## az deployment group create --resource-group srvymkr-training-rg --template-file .\infrastructure\bicep\main.bicep --parameters .\infrastructure\bicep\params.json
+## az deployment group create --resource-group creed-training-rg --template-file .\infrastructure\bicep\main.bicep --parameters .\infrastructure\bicep\params.json

@@ -1,15 +1,15 @@
-param containerapps_ca_srvymkr_mongo_dev_name string = 'ca-srvymkr-mongo-dev'
-param containerapps_ca_srvymkr_server_dev_name string = 'ca-srvymkr-server-dev'
-param managedEnvironments_cae_srvymkr_dev_name string = 'cae-srvymkr-dev'
-param containerapps_ca_srvymkr_server_prod_name string = 'ca-srvymkr-server-prod'
-param managedEnvironments_cae_srvymkr_prod_name string = 'cae-srvymkr-prod'
+param containerapps_ca_creed_mongo_dev_name string = 'ca-creed-mongo-dev'
+param containerapps_ca_creed_server_dev_name string = 'ca-creed-server-dev'
+param managedEnvironments_cae_creed_dev_name string = 'cae-creed-dev'
+param containerapps_ca_creed_server_prod_name string = 'ca-creed-server-prod'
+param managedEnvironments_cae_creed_prod_name string = 'cae-creed-prod'
 param registries_CRTestingGeneral_name string = 'CRTestingGeneral'
 param databaseAccounts_cfm_personal_test_general_name string = 'cfm-personal-test-general'
 param workspaces_workspacergpersonaltestgeneral9544_name string = 'workspacergpersonaltestgeneral9544'
 param workspaces_workspacergpersonaltestgenerala652_name string = 'workspacergpersonaltestgenerala652'
 
-resource managedEnvironments_cae_srvymkr_dev_name_resource 'Microsoft.App/managedEnvironments@2022-10-01' = {
-  name: managedEnvironments_cae_srvymkr_dev_name
+resource managedEnvironments_cae_creed_dev_name_resource 'Microsoft.App/managedEnvironments@2022-10-01' = {
+  name: managedEnvironments_cae_creed_dev_name
   location: 'westeurope'
   sku: {
     name: 'Consumption'
@@ -27,8 +27,8 @@ resource managedEnvironments_cae_srvymkr_dev_name_resource 'Microsoft.App/manage
   }
 }
 
-resource managedEnvironments_cae_srvymkr_prod_name_resource 'Microsoft.App/managedEnvironments@2022-10-01' = {
-  name: managedEnvironments_cae_srvymkr_prod_name
+resource managedEnvironments_cae_creed_prod_name_resource 'Microsoft.App/managedEnvironments@2022-10-01' = {
+  name: managedEnvironments_cae_creed_prod_name
   location: 'westeurope'
   sku: {
     name: 'Consumption'
@@ -198,15 +198,15 @@ resource workspaces_workspacergpersonaltestgenerala652_name_resource 'Microsoft.
   }
 }
 
-resource containerapps_ca_srvymkr_mongo_dev_name_resource 'Microsoft.App/containerapps@2022-10-01' = {
-  name: containerapps_ca_srvymkr_mongo_dev_name
+resource containerapps_ca_creed_mongo_dev_name_resource 'Microsoft.App/containerapps@2022-10-01' = {
+  name: containerapps_ca_creed_mongo_dev_name
   location: 'West Europe'
   identity: {
     type: 'None'
   }
   properties: {
-    managedEnvironmentId: managedEnvironments_cae_srvymkr_dev_name_resource.id
-    environmentId: managedEnvironments_cae_srvymkr_dev_name_resource.id
+    managedEnvironmentId: managedEnvironments_cae_creed_dev_name_resource.id
+    environmentId: managedEnvironments_cae_creed_dev_name_resource.id
     configuration: {
       secrets: [
         {
@@ -239,8 +239,8 @@ resource containerapps_ca_srvymkr_mongo_dev_name_resource 'Microsoft.App/contain
       revisionSuffix: 'revdev'
       containers: [
         {
-          image: 'crtestinggeneral.azurecr.io/srvymkr-mongo:latest'
-          name: 'container-srvymkr-mongo-dev'
+          image: 'crtestinggeneral.azurecr.io/creed-mongo:latest'
+          name: 'container-creed-mongo-dev'
           resources: {
             cpu: '0.25'
             memory: '0.5Gi'
@@ -256,15 +256,15 @@ resource containerapps_ca_srvymkr_mongo_dev_name_resource 'Microsoft.App/contain
   }
 }
 
-resource containerapps_ca_srvymkr_server_dev_name_resource 'Microsoft.App/containerapps@2022-10-01' = {
-  name: containerapps_ca_srvymkr_server_dev_name
+resource containerapps_ca_creed_server_dev_name_resource 'Microsoft.App/containerapps@2022-10-01' = {
+  name: containerapps_ca_creed_server_dev_name
   location: 'West Europe'
   identity: {
     type: 'None'
   }
   properties: {
-    managedEnvironmentId: managedEnvironments_cae_srvymkr_prod_name_resource.id
-    environmentId: managedEnvironments_cae_srvymkr_prod_name_resource.id
+    managedEnvironmentId: managedEnvironments_cae_creed_prod_name_resource.id
+    environmentId: managedEnvironments_cae_creed_prod_name_resource.id
     configuration: {
       secrets: [
         {
@@ -297,8 +297,8 @@ resource containerapps_ca_srvymkr_server_dev_name_resource 'Microsoft.App/contai
       revisionSuffix: 'revdev'
       containers: [
         {
-          image: 'crtestinggeneral.azurecr.io/srvymkr-server:latest'
-          name: 'container-srvymkr-server-dev'
+          image: 'crtestinggeneral.azurecr.io/creed-server:latest'
+          name: 'container-creed-server-dev'
           env: [
             {
               name: 'googleClientID'
@@ -324,15 +324,15 @@ resource containerapps_ca_srvymkr_server_dev_name_resource 'Microsoft.App/contai
   }
 }
 
-resource containerapps_ca_srvymkr_server_prod_name_resource 'Microsoft.App/containerapps@2022-10-01' = {
-  name: containerapps_ca_srvymkr_server_prod_name
+resource containerapps_ca_creed_server_prod_name_resource 'Microsoft.App/containerapps@2022-10-01' = {
+  name: containerapps_ca_creed_server_prod_name
   location: 'West Europe'
   identity: {
     type: 'None'
   }
   properties: {
-    managedEnvironmentId: managedEnvironments_cae_srvymkr_prod_name_resource.id
-    environmentId: managedEnvironments_cae_srvymkr_prod_name_resource.id
+    managedEnvironmentId: managedEnvironments_cae_creed_prod_name_resource.id
+    environmentId: managedEnvironments_cae_creed_prod_name_resource.id
     configuration: {
       secrets: [
         {
@@ -365,8 +365,8 @@ resource containerapps_ca_srvymkr_server_prod_name_resource 'Microsoft.App/conta
       revisionSuffix: 'revprod'
       containers: [
         {
-          image: 'crtestinggeneral.azurecr.io/srvymkr-server:latest'
-          name: 'container-srvymkr-server-prod'
+          image: 'crtestinggeneral.azurecr.io/creed-server:latest'
+          name: 'container-creed-server-prod'
           env: [
             {
               name: 'googleClientID'
@@ -392,11 +392,11 @@ resource containerapps_ca_srvymkr_server_prod_name_resource 'Microsoft.App/conta
   }
 }
 
-resource containerapps_ca_srvymkr_server_dev_name_current 'Microsoft.App/containerApps/sourcecontrols@2022-10-01' = {
-  parent: containerapps_ca_srvymkr_server_dev_name_resource
+resource containerapps_ca_creed_server_dev_name_current 'Microsoft.App/containerApps/sourcecontrols@2022-10-01' = {
+  parent: containerapps_ca_creed_server_dev_name_resource
   name: 'current'
   properties: {
-    repoUrl: 'https://github.com/hi77er/srvymkr.Server'
+    repoUrl: 'https://github.com/hi77er/creed.Server'
     branch: 'develop'
     githubActionConfiguration: {
       registryInfo: {
@@ -404,16 +404,16 @@ resource containerapps_ca_srvymkr_server_dev_name_current 'Microsoft.App/contain
         registryUserName: 'CRTestingGeneral'
       }
       contextPath: './'
-      image: 'ca-srvymkr-server-dev:\${{ github.sha }}'
+      image: 'ca-creed-server-dev:\${{ github.sha }}'
     }
   }
 }
 
-resource containerapps_ca_srvymkr_server_prod_name_current 'Microsoft.App/containerApps/sourcecontrols@2022-10-01' = {
-  parent: containerapps_ca_srvymkr_server_prod_name_resource
+resource containerapps_ca_creed_server_prod_name_current 'Microsoft.App/containerApps/sourcecontrols@2022-10-01' = {
+  parent: containerapps_ca_creed_server_prod_name_resource
   name: 'current'
   properties: {
-    repoUrl: 'https://github.com/hi77er/srvymkr.Server'
+    repoUrl: 'https://github.com/hi77er/creed.Server'
     branch: 'master'
     githubActionConfiguration: {
       registryInfo: {
@@ -421,7 +421,7 @@ resource containerapps_ca_srvymkr_server_prod_name_current 'Microsoft.App/contai
         registryUserName: 'CRTestingGeneral'
       }
       contextPath: './'
-      image: 'ca-srvymkr-server-prod:\${{ github.sha }}'
+      image: 'ca-creed-server-prod:\${{ github.sha }}'
     }
   }
 }
