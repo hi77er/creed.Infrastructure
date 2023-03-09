@@ -55,8 +55,8 @@ jobs:
         with:
           subscription: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
           resourceGroup: $RESOURCE_GROUP_NAME
-          templateFile: ./infrastructure/bicep/main.bicep
-          parametersFile: ./infrastructure/bicep/params.json
+          templateFile: ./bicep/main.bicep
+          parametersFile: ./bicep/params.json
 
   deploy-infrastructure:
     needs: [preview-infrastructure]
@@ -81,6 +81,6 @@ jobs:
         uses: azure/arm-deploy@v1
         with:
           resourceGroupName: creed-training-rg
-          template: ./infrastructure/bicep/main.bicep
-          parameters: ./infrastructure/bicep/params.json
+          template: ./bicep/main.bicep
+          parameters: ./bicep/params.json
           failOnStdErr: false
