@@ -15,7 +15,7 @@ var devSuffix = 'dev'
 var prodSuffix = 'prod'
 var devContainerRegistryName = toLower('${solution}${devSuffix}acr')
 var prodContainerRegistryName = toLower('${solution}${prodSuffix}acr')
-var keyVaultName = '${solution}-key-vault'
+var keyVaultName = '${solution}-kv'
 var devCRAdminSecretName = '${devContainerRegistryName}AdminPassword'
 var prodCRAdminSecretName = '${prodContainerRegistryName}AdminPassword'
 
