@@ -26,22 +26,38 @@ var prodDbName = toLower('${solution}-${prodSuffix}-mongodb')
 
 var devAPIPort = 80
 var devClientPort = 80
+var devFacebookClientId = '450487781777-dqqg7ep8rtol5vmb47riauiv8mllrb03.apps.googleusercontent.com'
+var devFacebookClientSecret = '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'
+var devFacebookCallback = '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'
+var devGithubClientId = '450487781777-dqqg7ep8rtol5vmb47riauiv8mllrb03.apps.googleusercontent.com'
+var devGithubClientSecret = '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'
+var devGithubCallback = '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'
 var devGoogleClientId = '450487781777-dqqg7ep8rtol5vmb47riauiv8mllrb03.apps.googleusercontent.com'
 var devGoogleClientSecret = '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'
-var devCookieKey = 'ajhfao87f68iu71839uiifdi8192fkj83129087ajhfao87f68iu71839uiifdi8192fkj83129087'
-var devJwtTokenSecret = 'dddsd-dahdhd-kjfjdhrhrerj-uurhr-jeee9'
+var devGoogleCallback = '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'
+var devAccessCookieKey = 'ajhfao87f68iu71839uiifdi8192fkj83129087ajhfao87f68iu71839uiifdi8192fkj83129087'
+var devAccessTokenSecret = 'dddsd-dahdhd-kjfjdhrhrerj-uurhr-jeee9'
+var devAccessTokenExpirySeconds = 900 // 15 mins = 60 seconds * 15 minutes
+var devRefreshCookieKey = '523342587f68iu71839uiifdi8192fkj83129087ajhfao87f68iu71839uiifdi858739042'
 var devRefreshTokenSecret = 'kmn2gkjddshfdjh73273bdjsj84-jdjd7632vg'
-var devJwtExpirySeconds = 900 // 15 mins = 60 seconds * 15 minutes
 var devRefreshTokenExpirySeconds = 2592000 // 30 days = 60 seconds * 60 minutes * 24 hours * 30 days
 
 var prodAPIPort = 80
 var prodClientPort = 80
+var prodFacebookClientId = '899455933664-q1r38u10d5icf12g8gim6ueib9g5ksnv.apps.googleusercontent.com'
+var prodFacebookClientSecret = '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'
+var prodFacebookCallback = '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'
+var prodGithubClientId = '899455933664-q1r38u10d5icf12g8gim6ueib9g5ksnv.apps.googleusercontent.com'
+var prodGithubClientSecret = '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'
+var prodGithubCallback = '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'
 var prodGoogleClientId = '899455933664-q1r38u10d5icf12g8gim6ueib9g5ksnv.apps.googleusercontent.com'
 var prodGoogleClientSecret = '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'
-var prodCookieKey = '6642ao87f68123gfs839uiifdi8192fkj83129087ajhfao87f68iu71839dasd131513129lca'
-var prodJwtTokenSecret = 'jdsd-dahdhd-kjfjdhrhrerj-uurhr-jjge7'
+var prodGoogleCallback = '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'
+var prodAccessCookieKey = '6642ao87f68123gfs839uiifdi8192fkj83129087ajhfao87f68iu71839dasd131513129lca'
+var prodAccessTokenSecret = 'jdsd-dahdhd-kjfjdhrhrerj-uurhr-jjge7'
+var prodAccessTokenExpirySeconds = 900 // 15 mins = 60 seconds * 15 minutes
+var prodRefreshCookieKey = '6642ao87f68123gfs839uiifdi8192fkj83129087ajhfao87f68iu71839dasd131513129lca'
 var prodRefreshTokenSecret = '34f2gkjddshfdjh73273bdjsj84-jdjd763274'
-var prodJwtExpirySeconds = 900 // 15 mins = 60 seconds * 15 minutes
 var prodRefreshTokenExpirySeconds = 2592000 // 30 days = 60 seconds * 60 minutes * 24 hours * 30 days
 
 // DEVELOPMENT ENV
@@ -194,12 +210,20 @@ module devAPIContainerApp 'aca.bicep' = {
       // PORT - SHOULD BE ALWAYS FIRST IN THE ARRAY
       { name: 'PORT', value: string(devAPIPort) }
       { name: 'MONGO_DB_CONNECTION_STRING', value: devMongoDbConnectionString }
+      { name: 'AUTH_FACEBOOK_CLIENT_ID', value: devFacebookClientId }
+      { name: 'AUTH_FACEBOOK_CLIENT_SECRET', value: devFacebookClientSecret }
+      { name: 'AUTH_FACEBOOK_CALLBACK', value: devFacebookCallback }
+      { name: 'AUTH_GITHUB_CLIENT_ID', value: devGithubClientId }
+      { name: 'AUTH_GITHUB_CLIENT_SECRET', value: devGithubClientSecret }
+      { name: 'AUTH_GITHUB_CALLBACK', value: devGithubCallback }
       { name: 'AUTH_GOOGLE_CLIENT_ID', value: devGoogleClientId }
       { name: 'AUTH_GOOGLE_CLIENT_SECRET', value: devGoogleClientSecret }
-      { name: 'AUTH_COOKIE_KEY', value: devCookieKey }
-      { name: 'AUTH_JWT_TOKEN_SECRET', value: devJwtTokenSecret }
+      { name: 'AUTH_GOOGLE_CALLBACK', value: devGoogleCallback }
+      { name: 'AUTH_ACCESS_COOKIE_KEY', value: devAccessCookieKey }
+      { name: 'AUTH_ACCESS_TOKEN_SECRET', value: devAccessTokenSecret }
+      { name: 'AUTH_ACCESS_TOKEN_EXPIRY_SECONDS', value: string(devAccessTokenExpirySeconds) }
+      { name: 'AUTH_REFRESH_COOKIE_KEY', value: devRefreshCookieKey }
       { name: 'AUTH_REFRESH_TOKEN_SECRET', value: devRefreshTokenSecret }
-      { name: 'AUTH_JWT_TOKEN_EXPIRY_SECONDS', value: string(devJwtExpirySeconds) }
       { name: 'AUTH_REFRESH_TOKEN_EXPIRY_SECONDS', value: string(devRefreshTokenExpirySeconds) }
       { name: 'CORS_WHITELISTED_DOMAINS', value: devCorsWhitelistedDomains }
     ]
@@ -340,12 +364,20 @@ module prodAPIContainerApp 'aca.bicep' = {
       // PORT - SHOULD BE ALWAYS FIRST IN THE ARRAY
       { name: 'PORT', value: string(prodAPIPort) }
       { name: 'MONGO_DB_CONNECTION_STRING', value: prodMongoDbConnectionString }
+      { name: 'AUTH_FACEBOOK_CLIENT_ID', value: prodFacebookClientId }
+      { name: 'AUTH_FACEBOOK_CLIENT_SECRET', value: prodFacebookClientSecret }
+      { name: 'AUTH_FACEBOOK_CALLBACK', value: prodFacebookCallback }
+      { name: 'AUTH_GITHUB_CLIENT_ID', value: prodGithubClientId }
+      { name: 'AUTH_GITHUB_CLIENT_SECRET', value: prodGithubClientSecret }
+      { name: 'AUTH_GITHUB_CALLBACK', value: prodGithubCallback }
       { name: 'AUTH_GOOGLE_CLIENT_ID', value: prodGoogleClientId }
       { name: 'AUTH_GOOGLE_CLIENT_SECRET', value: prodGoogleClientSecret }
-      { name: 'AUTH_COOKIE_KEY', value: prodCookieKey }
-      { name: 'AUTH_JWT_TOKEN_SECRET', value: prodJwtTokenSecret }
+      { name: 'AUTH_GOOGLE_CALLBACK', value: prodGoogleCallback }
+      { name: 'AUTH_ACCESS_COOKIE_KEY', value: prodAccessCookieKey }
+      { name: 'AUTH_ACCESS_TOKEN_SECRET', value: prodAccessTokenSecret }
+      { name: 'AUTH_ACCESS_TOKEN_EXPIRY_SECONDS', value: string(prodAccessTokenExpirySeconds) }
+      { name: 'AUTH_REFRESH_COOKIE_KEY', value: prodRefreshCookieKey }
       { name: 'AUTH_REFRESH_TOKEN_SECRET', value: prodRefreshTokenSecret }
-      { name: 'AUTH_JWT_TOKEN_EXPIRY_SECONDS', value: string(prodJwtExpirySeconds) }
       { name: 'AUTH_REFRESH_TOKEN_EXPIRY_SECONDS', value: string(prodRefreshTokenExpirySeconds) }
       { name: 'CORS_WHITELISTED_DOMAINS', value: prodCorsWhitelistedDomains }
     ]
