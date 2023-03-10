@@ -24,41 +24,113 @@ var devDbName = toLower('${solution}-${devSuffix}-mongodb')
 var prodDbAccountName = toLower('${solution}-${prodSuffix}-mongodb-account')
 var prodDbName = toLower('${solution}-${prodSuffix}-mongodb')
 
+// PORT
 var devAPIPort = 80
-var devClientPort = 80
-var devFacebookClientId = '450487781777-dqqg7ep8rtol5vmb47riauiv8mllrb03.apps.googleusercontent.com'
-var devFacebookClientSecret = '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'
-var devFacebookCallback = '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'
-var devGithubClientId = '450487781777-dqqg7ep8rtol5vmb47riauiv8mllrb03.apps.googleusercontent.com'
-var devGithubClientSecret = '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'
-var devGithubCallback = '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'
+// AUTH_FACEBOOK_CLIENT_ID
+var devFacebookClientId = '110460608594145'
+// AUTH_FACEBOOK_CLIENT_SECRET
+var devFacebookClientSecret = 'a5c04e1366fa2683631d3c1f33be3e20'
+// AUTH_FACEBOOK_CALLBACK
+var devFacebookCallback = '/oauth/facebook/callback'
+// AUTH_GITHUB_CLIENT_ID
+var devGithubClientId = '16c2660b886b37835f63'
+// AUTH_GITHUB_CLIENT_SECRET
+var devGithubClientSecret = '9665d39e2a7077df46194f0ed977954365fb4772'
+// AUTH_GITHUB_CALLBACK
+var devGithubCallback = '/oauth/github/callback'
+// AUTH_GOOGLE_CLIENT_ID
 var devGoogleClientId = '450487781777-dqqg7ep8rtol5vmb47riauiv8mllrb03.apps.googleusercontent.com'
+// AUTH_GOOGLE_CLIENT_SECRET
 var devGoogleClientSecret = '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'
-var devGoogleCallback = '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'
+// AUTH_GOOGLE_CALLBACK
+var devGoogleCallback = '/oauth/google/callback'
+// AUTH_ACCESS_COOKIE_KEY
 var devAccessCookieKey = 'ajhfao87f68iu71839uiifdi8192fkj83129087ajhfao87f68iu71839uiifdi8192fkj83129087'
+// AUTH_ACCESS_TOKEN_SECRET
 var devAccessTokenSecret = 'dddsd-dahdhd-kjfjdhrhrerj-uurhr-jeee9'
+// AUTH_ACCESS_TOKEN_EXPIRY_SECONDS
 var devAccessTokenExpirySeconds = 900 // 15 mins = 60 seconds * 15 minutes
+// AUTH_REFRESH_COOKIE_KEY
 var devRefreshCookieKey = '523342587f68iu71839uiifdi8192fkj83129087ajhfao87f68iu71839uiifdi858739042'
+// AUTH_REFRESH_TOKEN_SECRET
 var devRefreshTokenSecret = 'kmn2gkjddshfdjh73273bdjsj84-jdjd7632vg'
+// AUTH_REFRESH_TOKEN_EXPIRY_SECONDS
 var devRefreshTokenExpirySeconds = 2592000 // 30 days = 60 seconds * 60 minutes * 24 hours * 30 days
 
+// PORT
 var prodAPIPort = 80
-var prodClientPort = 80
-var prodFacebookClientId = '899455933664-q1r38u10d5icf12g8gim6ueib9g5ksnv.apps.googleusercontent.com'
-var prodFacebookClientSecret = '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'
-var prodFacebookCallback = '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'
-var prodGithubClientId = '899455933664-q1r38u10d5icf12g8gim6ueib9g5ksnv.apps.googleusercontent.com'
-var prodGithubClientSecret = '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'
-var prodGithubCallback = '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'
+// AUTH_FACEBOOK_CLIENT_ID
+var prodFacebookClientId = '207829888499142'
+// AUTH_FACEBOOK_CLIENT_SECRET
+var prodFacebookClientSecret = '29bdfa7f0d8ebebfde7b4fbf6440b6e0'
+// AUTH_FACEBOOK_CALLBACK
+var prodFacebookCallback = '/oauth/facebook/callback'
+// AUTH_GITHUB_CLIENT_ID
+var prodGithubClientId = '2b08a500a7dfcba93346'
+// AUTH_GITHUB_CLIENT_SECRET
+var prodGithubClientSecret = 'b0d9aca7fac54632e728d0b576fe4cb50815a3f7'
+// AUTH_GITHUB_CALLBACK
+var prodGithubCallback = '/oauth/github/callback'
+// AUTH_GOOGLE_CLIENT_ID
 var prodGoogleClientId = '899455933664-q1r38u10d5icf12g8gim6ueib9g5ksnv.apps.googleusercontent.com'
-var prodGoogleClientSecret = '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'
-var prodGoogleCallback = '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'
-var prodAccessCookieKey = '6642ao87f68123gfs839uiifdi8192fkj83129087ajhfao87f68iu71839dasd131513129lca'
-var prodAccessTokenSecret = 'jdsd-dahdhd-kjfjdhrhrerj-uurhr-jjge7'
-var prodAccessTokenExpirySeconds = 900 // 15 mins = 60 seconds * 15 minutes
-var prodRefreshCookieKey = '6642ao87f68123gfs839uiifdi8192fkj83129087ajhfao87f68iu71839dasd131513129lca'
-var prodRefreshTokenSecret = '34f2gkjddshfdjh73273bdjsj84-jdjd763274'
+//  AUTH_GOOGLE_CLIENT_SECRET
+var prodGoogleClientSecret = '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'
+// AUTH_GOOGLE_CALLBACK
+var prodGoogleCallback = '/oauth/google/callback'
+// AUTH_ACCESS_COOKIE_KEY
+var prodAccessCookieKey = 'fsadasdasfdi8192fkj83129087ajhfao87f68iu71839uiifdi81cxzsdfyy'
+// AUTH_ACCESS_TOKEN_SECRET
+var prodAccessTokenSecret = '5123sd-dahdhd-kj5213hrhrerj-uurhr-je623'
+// AUTH_ACCESS_TOKEN_EXPIRY_SECONDS
+var prodAccessTokenExpirySeconds = 900 // 15 mins = 60 seconds * 15 minutesm
+// AUTH_REFRESH_COOKIE_KEY
+var prodRefreshCookieKey = 'kjghkdalasifdi8192fkj83129087ajhfao87f68iu7183gjaksdassad'
+// AUTH_REFRESH_TOKEN_SECRET
+var prodRefreshTokenSecret = 'gurayaosjddshfdjh73273bdjsj84-jdjd7gjahskld333'
+// AUTH_REFRESH_TOKEN_EXPIRY_SECONDS
 var prodRefreshTokenExpirySeconds = 2592000 // 30 days = 60 seconds * 60 minutes * 24 hours * 30 days
+
+// PORT
+var devClientAppPort = 80
+// REACT_APP_WEB_API_BASE_URL
+var devClientAppWebApiBaseUrl = 'Update it when Web Api is already deployed.'
+// REACT_APP_AUTH_ACCESS_COOKIE_KEY
+var devClientAppAuthAccessCookieKey = 'fsadasdasfdi8192fkj83129087ajhfao87f68iu71839uiifdi81cxzsdfyy'
+// REACT_APP_AUTH_REFRESH_COOKIE_KEY
+var devClientAppAuthRefreshCookieKey = 'kjghkdalasifdi8192fkj83129087ajhfao87f68iu7183gjaksdassad'
+// REACT_APP_FACEBOOK_OAUTH_CLIENT_ID
+var devClientAppFacebookClientId = '110460608594145'
+// REACT_APP_FACEBOOK_OAUTH_REDIRECT
+var devClientAppFacebookCallback = 'https://creed-server-dev-ca.agreeableground-2ce19df1.westeurope.azurecontainerapps.io/oauth/facebook/callback'
+// REACT_APP_GITHUB_OAUTH_CLIENT_ID
+var devClientAppGithubClientId = '16c2660b886b37835f63'
+// REACT_APP_GITHUB_OAUTH_REDIRECT
+var devClientAppGithubCallback = 'https://creed-server-dev-ca.agreeableground-2ce19df1.westeurope.azurecontainerapps.io/oauth/github/callback'
+// REACT_APP_GOOGLE_OAUTH_CLIENT_ID
+var devClientAppGoogleClientId = '450487781777-dqqg7ep8rtol5vmb47riauiv8mllrb03.apps.googleusercontent.com'
+// REACT_APP_GOOGLE_OAUTH_REDIRECT
+var devClientAppGoogleCallback = 'https://creed-server-dev-ca.agreeableground-2ce19df1.westeurope.azurecontainerapps.io/oauth/google/callback'
+
+// PORT
+var prodClientAppPort = 80
+// REACT_APP_WEB_API_BASE_URL
+var prodClientAppWebApiBaseUrl = 'Update it when Web Api is already deployed.'
+// REACT_APP_AUTH_ACCESS_COOKIE_KEY
+var prodClientAppAuthAccessCookieKey = 'ghjkljhgfhjkhgfhkjlnkjhgkjblknhg47639016adkjkad1791'
+// REACT_APP_AUTH_REFRESH_COOKIE_KEY
+var prodClientAppAuthRefreshCookieKey = '64324gfhjkhgfhkjlnkjhgkjblknhg47639016adfsd2356'
+// REACT_APP_FACEBOOK_OAUTH_CLIENT_ID
+var prodClientAppFacebookClientId = '207829888499142'
+// REACT_APP_FACEBOOK_OAUTH_REDIRECT
+var prodClientAppFacebookCallback = 'https://creed-server-prod-ca.salmonhill-044fac01.westeurope.azurecontainerapps.io/oauth/facebook/callback'
+// REACT_APP_GITHUB_OAUTH_CLIENT_ID
+var prodClientAppGithubClientId = '2b08a500a7dfcba93346'
+// REACT_APP_GITHUB_OAUTH_REDIRECT
+var prodClientAppGithubCallback = 'https://creed-server-prod-ca.salmonhill-044fac01.westeurope.azurecontainerapps.io/oauth/github/callback'
+// REACT_APP_GOOGLE_OAUTH_CLIENT_ID
+var prodClientAppGoogleClientId = '899455933664-q1r38u10d5icf12g8gim6ueib9g5ksnv.apps.googleusercontent.com'
+// REACT_APP_GOOGLE_OAUTH_REDIRECT
+var prodClientAppGoogleCallback = 'https://creed-server-prod-ca.salmonhill-044fac01.westeurope.azurecontainerapps.io/oauth/google/callback'
 
 // DEVELOPMENT ENV
 
@@ -186,13 +258,22 @@ module devClientContainerApp 'aca.bicep' = {
     imageTag: clientImageTag
     envVariables: [
       // PORT - SHOULD BE ALWAYS FIRST IN THE ARRAY
-      { name: 'PORT', value: string(devClientPort) }
+      { name: 'PORT', value: string(devClientAppPort) }
+      { name: 'REACT_APP_WEB_API_BASE_URL', value: devClientAppWebApiBaseUrl }
+      { name: 'REACT_APP_AUTH_ACCESS_COOKIE_KEY', value: devClientAppAuthAccessCookieKey }
+      { name: 'REACT_APP_AUTH_REFRESH_COOKIE_KEY', value: devClientAppAuthRefreshCookieKey }
+      { name: 'REACT_APP_FACEBOOK_OAUTH_CLIENT_ID', value: devClientAppFacebookClientId }
+      { name: 'REACT_APP_FACEBOOK_OAUTH_REDIRECT', value: devClientAppFacebookCallback }
+      { name: 'REACT_APP_GITHUB_OAUTH_CLIENT_ID', value: devClientAppGithubClientId }
+      { name: 'REACT_APP_GITHUB_OAUTH_REDIRECT', value: devClientAppGithubCallback }
+      { name: 'REACT_APP_GOOGLE_OAUTH_CLIENT_ID', value: devClientAppGoogleClientId }
+      { name: 'REACT_APP_GOOGLE_OAUTH_REDIRECT', value: devClientAppGoogleCallback }
     ]
   }
 }
 
 var devMongoDbConnectionString = listConnectionStrings(devDbAccount.id, devDbAccount.apiVersion).connectionStrings[0].connectionString
-var devCorsWhitelistedDomains = devClientContainerApp.outputs.ContainerAppUrl
+var devCorsWhitelistedDomains = 'https://${devClientContainerApp.outputs.ContainerAppUrl}'
 
 module devAPIContainerApp 'aca.bicep' = {
   name: 'devAPIContainerApp'
@@ -340,13 +421,22 @@ module prodClientContainerApp 'aca.bicep' = {
     imageTag: clientImageTag
     envVariables: [
       // PORT - SHOULD BE ALWAYS FIRST IN THE ARRAY
-      { name: 'PORT', value: string(prodClientPort) }
+      { name: 'PORT', value: string(prodClientAppPort) }
+      { name: 'REACT_APP_WEB_API_BASE_URL', value: prodClientAppWebApiBaseUrl }
+      { name: 'REACT_APP_AUTH_ACCESS_COOKIE_KEY', value: prodClientAppAuthAccessCookieKey }
+      { name: 'REACT_APP_AUTH_REFRESH_COOKIE_KEY', value: prodClientAppAuthRefreshCookieKey }
+      { name: 'REACT_APP_FACEBOOK_OAUTH_CLIENT_ID', value: prodClientAppFacebookClientId }
+      { name: 'REACT_APP_FACEBOOK_OAUTH_REDIRECT', value: prodClientAppFacebookCallback }
+      { name: 'REACT_APP_GITHUB_OAUTH_CLIENT_ID', value: prodClientAppGithubClientId }
+      { name: 'REACT_APP_GITHUB_OAUTH_REDIRECT', value: prodClientAppGithubCallback }
+      { name: 'REACT_APP_GOOGLE_OAUTH_CLIENT_ID', value: prodClientAppGoogleClientId }
+      { name: 'REACT_APP_GOOGLE_OAUTH_REDIRECT', value: prodClientAppGoogleCallback }
     ]
   }
 }
 
 var prodMongoDbConnectionString = listConnectionStrings(prodDbAccount.id, prodDbAccount.apiVersion).connectionStrings[0].connectionString
-var prodCorsWhitelistedDomains = prodClientContainerApp.outputs.ContainerAppUrl
+var prodCorsWhitelistedDomains = 'https://${prodClientContainerApp.outputs.ContainerAppUrl}'
 
 module prodAPIContainerApp 'aca.bicep' = {
   name: 'prodAPIContainerApp'
