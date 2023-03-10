@@ -101,15 +101,15 @@ var devClientAppAuthRefreshCookieKey = 'kjghkdalasifdi8192fkj83129087ajhfao87f68
 // REACT_APP_FACEBOOK_OAUTH_CLIENT_ID
 var devClientAppFacebookClientId = '110460608594145'
 // REACT_APP_FACEBOOK_OAUTH_REDIRECT
-var devClientAppFacebookCallback = 'https://creed-server-dev-ca.agreeableground-2ce19df1.westeurope.azurecontainerapps.io/oauth/facebook/callback'
+var devClientAppFacebookCallback = '/oauth/facebook/callback'
 // REACT_APP_GITHUB_OAUTH_CLIENT_ID
 var devClientAppGithubClientId = '16c2660b886b37835f63'
 // REACT_APP_GITHUB_OAUTH_REDIRECT
-var devClientAppGithubCallback = 'https://creed-server-dev-ca.agreeableground-2ce19df1.westeurope.azurecontainerapps.io/oauth/github/callback'
+var devClientAppGithubCallback = '/oauth/github/callback'
 // REACT_APP_GOOGLE_OAUTH_CLIENT_ID
 var devClientAppGoogleClientId = '450487781777-dqqg7ep8rtol5vmb47riauiv8mllrb03.apps.googleusercontent.com'
 // REACT_APP_GOOGLE_OAUTH_REDIRECT
-var devClientAppGoogleCallback = 'https://creed-server-dev-ca.agreeableground-2ce19df1.westeurope.azurecontainerapps.io/oauth/google/callback'
+var devClientAppGoogleCallback = '/oauth/google/callback'
 
 // PORT
 var prodClientAppPort = 80
@@ -122,15 +122,15 @@ var prodClientAppAuthRefreshCookieKey = '64324gfhjkhgfhkjlnkjhgkjblknhg47639016a
 // REACT_APP_FACEBOOK_OAUTH_CLIENT_ID
 var prodClientAppFacebookClientId = '207829888499142'
 // REACT_APP_FACEBOOK_OAUTH_REDIRECT
-var prodClientAppFacebookCallback = 'https://creed-server-prod-ca.salmonhill-044fac01.westeurope.azurecontainerapps.io/oauth/facebook/callback'
+var prodClientAppFacebookCallback = '/oauth/facebook/callback'
 // REACT_APP_GITHUB_OAUTH_CLIENT_ID
 var prodClientAppGithubClientId = '2b08a500a7dfcba93346'
 // REACT_APP_GITHUB_OAUTH_REDIRECT
-var prodClientAppGithubCallback = 'https://creed-server-prod-ca.salmonhill-044fac01.westeurope.azurecontainerapps.io/oauth/github/callback'
+var prodClientAppGithubCallback = '/oauth/github/callback'
 // REACT_APP_GOOGLE_OAUTH_CLIENT_ID
 var prodClientAppGoogleClientId = '899455933664-q1r38u10d5icf12g8gim6ueib9g5ksnv.apps.googleusercontent.com'
 // REACT_APP_GOOGLE_OAUTH_REDIRECT
-var prodClientAppGoogleCallback = 'https://creed-server-prod-ca.salmonhill-044fac01.westeurope.azurecontainerapps.io/oauth/google/callback'
+var prodClientAppGoogleCallback = '/oauth/google/callback'
 
 // DEVELOPMENT ENV
 
