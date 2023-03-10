@@ -10,19 +10,19 @@
 
 
 
-##  Before creating a new Resource Group and populating it with the recources described 
-##  in the Bicep Files, make sure the Resource Group doesn't exist:
-##  ! NOT IMPLEMENTED IN GITHUB ACTIONS FOR THIS PROJECT
-#
-az group delete --name creed-training-rg 
-
-
-
 ##  Azure Key Vaults are usually soft-deleted. Make sure Key Vault with the name 
 ##  decribed in the Bicep Files, doesn't exist in the Deleted Key Vaults list.
 ##  ! NOT IMPLEMENTED IN GITHUB ACTIONS THIS PROJECT
 #
-az keyvault purge --name creed-key-vault
+az keyvault purge --name creed-kv
+
+
+##  Before creating a new Resource Group and populating it with the recources described 
+##  in the Bicep Files, make sure the Resource Group doesn't exist:
+##  ! NOT IMPLEMENTED IN GITHUB ACTIONS FOR THIS PROJECT
+#
+# az group delete --name creed-training-rg 
+
 
 
 
