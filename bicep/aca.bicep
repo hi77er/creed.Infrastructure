@@ -68,7 +68,24 @@ resource containerApp 'Microsoft.App/containerApps@2022-06-01-preview' = {
             cpu: '0.25'
             memory: '0.5Gi'
           }
-          probes: []
+          probes: [
+            {
+              type: 'liveness'
+              httpGet: {
+                port: 80
+              }
+              initialDelaySeconds: 15
+              periodSeconds: 3
+            }
+            {
+              type: 'readiness'
+              tcpSocket: {
+                port: 80
+              }
+              initialDelaySeconds: 15
+              periodSeconds: 3
+            }
+          ]
         }
       ]
       scale: {
