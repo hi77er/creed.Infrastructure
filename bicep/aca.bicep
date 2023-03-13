@@ -49,10 +49,10 @@ resource containerApp 'Microsoft.App/containerApps@2022-06-01-preview' = {
       dapr: {
         enabled: true
         appPort: envVariables[0].value
-        appId: '${solution}-${project}-${env}-container'
+        appId: '${solution}-${project}-${env}'
         appProtocol: 'http'
         enableApiLogging: false
-        logLevel: 'error'
+        logLevel: 'warn'
       }
       activeRevisionsMode: 'Single'
       maxInactiveRevisions: 1
@@ -71,19 +71,36 @@ resource containerApp 'Microsoft.App/containerApps@2022-06-01-preview' = {
           probes: [
             {
               type: 'liveness'
+              initialDelaySeconds: 5
+              periodSeconds: 120
+              failureThreshold: 3
+              timeoutSeconds: 10
               httpGet: {
                 port: 80
+                path: '/'
               }
-              initialDelaySeconds: 15
-              periodSeconds: 3
+            }
+            {
+              type: 'startup'
+              initialDelaySeconds: 5
+              periodSeconds: 120
+              failureThreshold: 3
+              timeoutSeconds: 10
+              httpGet: {
+                port: 80
+                path: '/'
+              }
             }
             {
               type: 'readiness'
-              tcpSocket: {
+              initialDelaySeconds: 5
+              periodSeconds: 120
+              failureThreshold: 3
+              timeoutSeconds: 10
+              httpGet: {
                 port: 80
+                path: '/'
               }
-              initialDelaySeconds: 15
-              periodSeconds: 3
             }
           ]
         }
